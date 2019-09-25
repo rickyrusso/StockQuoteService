@@ -29,11 +29,11 @@ public class StockQuote {
      * @param date the date
      */
     /* Private help method to create a new  */
-    public StockQuote(String symbol, double price, Calendar date){
+/*    public StockQuote(String symbol, double price, Calendar date){
         this.symbol = symbol;
         this.price = new BigDecimal(price);
         this.date = date;
-    }
+    }*/
 
 
 
