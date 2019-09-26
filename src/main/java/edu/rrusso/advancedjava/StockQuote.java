@@ -1,9 +1,12 @@
 package edu.rrusso.advancedjava;
 
+import jdk.nashorn.internal.ir.annotations.Immutable;
+
 import java.math.BigDecimal;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
+@Immutable
 public class StockQuote {
     private String symbol;
     private BigDecimal price;

@@ -1,5 +1,7 @@
 package edu.rrusso.advancedjava;
 
+import com.sun.istack.internal.NotNull;
+
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.security.InvalidParameterException;
@@ -45,7 +47,7 @@ public class BasicStockService implements StockService {
      * e.g. APPL for APPLE
      * @return a <CODE>StockQuote </CODE> instance
      */
-    public StockQuote getQuote(String symbol) {
+    public StockQuote getQuote(@NotNull String symbol) {
         List<StockQuote> quotesForSymbol = stockQuotes.stream()
                 .filter(x -> x.getStockSymbol().equals(symbol) )
                 .collect(Collectors.toList());
@@ -60,7 +62,7 @@ public class BasicStockService implements StockService {
      * @param until the ending date range to search for
      * @return a <CODE>StockQuote </CODE> instance
      */
-    public List<StockQuote> getQuote(String symbol, Calendar from, Calendar until) {
+    public List<StockQuote> getQuote(@NotNull String symbol, @NotNull Calendar from, @NotNull Calendar until) {
         Calendar untilFixed = (Calendar)until.clone();
         untilFixed.set(Calendar.HOUR, 23);
         untilFixed.set(Calendar.MINUTE, 59);
@@ -88,7 +90,7 @@ public class BasicStockService implements StockService {
      * one StockQuote per day will be returned.
      * @return a list of StockQuote instances. One for each day in the range specified.
      */
-    public List<StockQuote> getQuote(String symbol, Calendar from, Calendar until, Interval interval) {
+    public List<StockQuote> getQuote(@NotNull String symbol, @NotNull Calendar from, @NotNull Calendar until, Interval interval) {
 
         if(interval == Interval.ALL) {
             return stockQuotes;

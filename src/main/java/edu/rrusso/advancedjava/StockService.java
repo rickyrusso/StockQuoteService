@@ -1,5 +1,7 @@
 package edu.rrusso.advancedjava;
 
+import com.sun.istack.internal.NotNull;
+
 import java.util.Calendar;
 import java.util.List;
 
@@ -10,7 +12,7 @@ public interface StockService {
      * @param symbol the stock symbol of the company you want a quote for e.g. APPL for APPLE
      * @return a <CODE>StockQuote</CODE> instance
      */
-    StockQuote getQuote(String symbol);
+    StockQuote getQuote(@NotNull String symbol);
     /**
      * Get a historical list of stock quotes for the provide symbol
      * This method will return one StockQuote per 24 hour period.
@@ -22,7 +24,7 @@ public interface StockService {
      * @param until the date of the last stock quote
      * @return a list of StockQuote instances. One for each day in the range specified.
      */
-    List<StockQuote> getQuote(String symbol, Calendar from, Calendar until);
+    List<StockQuote> getQuote(@NotNull String symbol, @NotNull Calendar from, @NotNull Calendar until);
     /**
      * Get a historical list of stock quotes for the provide symbol
      * This method will return one StockQuote per interval specified.
@@ -35,5 +37,5 @@ public interface StockService {
      * one StockQuote per day will be returned.
      * @return a list of StockQuote instances. One for each day in the range specified.
      */
-    List<StockQuote> getQuote(String symbol, Calendar from, Calendar until, Interval interval);
+    List<StockQuote> getQuote(@NotNull String symbol, @NotNull Calendar from, @NotNull Calendar until, Interval interval);
 }

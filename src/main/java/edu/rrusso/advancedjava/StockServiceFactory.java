@@ -1,5 +1,7 @@
 package edu.rrusso.advancedjava;
 
+import com.sun.istack.internal.NotNull;
+
 import java.util.List;
 
 /**
@@ -13,7 +15,7 @@ public class StockServiceFactory {
      *
      * @param stockService implementation used to get actual stock data
      */
-    public StockServiceFactory(StockService stockService){
+    public StockServiceFactory(@NotNull StockService stockService){
         this.stockService = stockService;
     }
 
