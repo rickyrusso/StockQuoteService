@@ -1,7 +1,7 @@
 package edu.rrusso.advancedjava;
 
-import com.sun.istack.internal.NotNull;
 
+import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.security.InvalidParameterException;

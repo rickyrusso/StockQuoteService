@@ -1,7 +1,7 @@
 package edu.rrusso.advancedjava;
 
-import com.sun.istack.internal.NotNull;
 
+import javax.validation.constraints.NotNull;
 import java.util.Calendar;
 import java.util.List;
 
