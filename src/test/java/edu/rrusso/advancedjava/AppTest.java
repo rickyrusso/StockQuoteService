@@ -8,7 +8,7 @@ public class AppTest {
     //  test that no exception is thrown
     @Test
     public void testMain(){
-        String[] params = new String[]{"MSFT", "9/18/2019", "9/20/2019"};
+        String[] params = new String[]{"MSFT", "9/18/2019", "9/20/2019", "DAILY"};
         App.main(params);
     }
 

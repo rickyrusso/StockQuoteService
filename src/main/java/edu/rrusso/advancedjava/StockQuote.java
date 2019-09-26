@@ -8,7 +8,7 @@ public class StockQuote {
     private String symbol;
     private BigDecimal price;
     private Calendar date;
-    private SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
+    private SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy HH:mm");
 
     /**
      *  Create a new  StockQuote instance
@@ -21,21 +21,6 @@ public class StockQuote {
         this.price = price;
         this.date = date;
     }
-
-    /**
-     *  Create a new  StockQuote instance
-     * @param symbol the stock symbol
-     * @param price the price
-     * @param date the date
-     */
-    /* Private help method to create a new  */
-/*    public StockQuote(String symbol, double price, Calendar date){
-        this.symbol = symbol;
-        this.price = new BigDecimal(price);
-        this.date = date;
-    }*/
-
-
 
     /**
      * @return the stock symbol

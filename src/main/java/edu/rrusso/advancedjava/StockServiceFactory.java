@@ -23,5 +23,4 @@ public class StockServiceFactory {
     public StockService getStockService(){
         return stockService;
     }
-
 }

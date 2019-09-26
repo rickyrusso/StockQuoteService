@@ -6,23 +6,23 @@ import java.util.List;
 public interface StockService {
     /**
      * Return the current price for a share of stock for the given symbol
-     * @param symbol the stock symbol of the company you want a quote for.
-     * e.g. APPL for APPLE
-     * @return a <CODE>StockQuote </CODE> instance
+     *
+     * @param symbol the stock symbol of the company you want a quote for e.g. APPL for APPLE
+     * @return a <CODE>StockQuote</CODE> instance
      */
-    StockQuote getQuote(String symbol, Calendar date);
-
-
+    StockQuote getQuote(String symbol);
     /**
-     * Return a list of StockQuotes for a given symbol and date range
-     * @param symbol the stock symbol of the company you want a quote for. e.g. APPL for APPLE
-     * @param from the strarting date range to search for
-     * @param until the ending date range to search for
-     * @return a <CODE>StockQuote </CODE> instance
+     * Get a historical list of stock quotes for the provide symbol
+     * This method will return one StockQuote per 24 hour period.
+     * If you wish more or less StockQuotes returned you can specify the
+     * Interval yourself using the
+     *
+     * @param symbol the stock symbol to search for
+     * @param from the date of the first stock quote
+     * @param until the date of the last stock quote
+     * @return a list of StockQuote instances. One for each day in the range specified.
      */
     List<StockQuote> getQuote(String symbol, Calendar from, Calendar until);
-
-
     /**
      * Get a historical list of stock quotes for the provide symbol
      * This method will return one StockQuote per interval specified.
