@@ -17,18 +17,13 @@ public class App {
         String symbol = args[0];
         Calendar from = parseDate(args[1]);
         Calendar until = parseDate(args[2]);
-        until.set(Calendar.HOUR, 23);
-        until.set(Calendar.MINUTE, 59);
-        until.set(Calendar.SECOND, 59);
-        until.set(Calendar.MILLISECOND, 999);
+        Interval interval = Interval.valueOf(args[3]);
 
         StockServiceFactory stockServiceFactory = new StockServiceFactory(new BasicStockService());
         StockService stockService = stockServiceFactory.getStockService();
 
-        List<StockQuote> filteredStockQuotes = stockService.getQuote(symbol, from, until);
-        for(StockQuote stockQuote : filteredStockQuotes){
-            System.out.println(stockQuote);
-        }
+        List<StockQuote> filteredStockQuotes = stockService.getQuote(symbol, from, until, interval);
+        filteredStockQuotes.forEach(System.out::println);
     }
 
     /**
